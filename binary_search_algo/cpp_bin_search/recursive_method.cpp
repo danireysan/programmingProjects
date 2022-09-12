@@ -17,7 +17,7 @@ int binarySearch(int target, int* array, int high, int low) {
     if(low < high) {
         if(target == array[middle]) return middle;
         if(array[middle] > target) binarySearch(target, array, middle-1, low);
-        return binarySearch(target, array, high, middle+1);
+        else binarySearch(target, array, high, middle+1);
     }
 
     return -1;
