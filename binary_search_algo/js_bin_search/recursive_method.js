@@ -1,7 +1,7 @@
 
 function main() {
     const array = [1,3,5,7,9,11,13]
-    var target = 5
+    var target = 7
     let low = 0;
     let high = array.length - 1;
     let result;
@@ -15,15 +15,17 @@ function main() {
 }
 
 function binarySearch(target, array, low, high) {
-    if (low<=high) {
-       let middle = low + Math.floor((high - low) / 2);
+    if (low <= high) {
+       let middle = low + Math.floor((high - low) / 2)
        let arrayValue = array[middle]
        if(target==arrayValue) 
             return middle
+
        if(target<arrayValue) 
-            binarySearch(target, array, low, middle -1)
+            return binarySearch(target, array, low, middle -1)
+            
        if(target>arrayValue)
-            binarySearch(target, array, middle + 1, high) 
+            return binarySearch(target, array, middle + 1, high) 
     }
     // Base case
     return -1
