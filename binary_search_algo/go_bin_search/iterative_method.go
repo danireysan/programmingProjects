@@ -13,9 +13,9 @@ func binarySearch(target int, array []int) int {
 		}
 		if target < array[middle] {
 			high = middle - 1
+		} else {
+			low = middle + 1
 		}
-
-		low = middle + 1
 
 	}
 	return -1
@@ -30,7 +30,7 @@ func main() {
 	if result == -1 {
 		fmt.Println("The number is not in the array")
 	} else {
-		fmt.Println("The number is at: %i", result)
+		fmt.Println("The number is at:", result)
 	}
 
 }
